@@ -1,81 +1,25 @@
-# Workout on Prime numbers, Amicable number, Factorial number, Armstrong number
+#Write a program to remove lowercase substrings from a given string.
+s = input("Enter a string: ")
 
-print('-------------------------Prime Number --------------------------')
-n = int(input(' enter a number'))
-if n <= 1:
-    print(False)
-else:
-    prime = True
+result = ""
 
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            prime = False
-            break
+for ch in s:
+    if not ch.islower():
+        result += ch
 
-    print(prime)
+print("After removing lowercase characters:", result)
 
+expression = input("Enter an expression: ")
 
-print('------------------------- Amicable Number --------------------------')
+result = eval(expression)
 
-x = int(input('Enter number 1: '))
-y = int(input('Enter number 2: '))
-sum1 = 0
-sum2 = 0
+print("Result:", result)
 
-for i in range(1, x):
-    if x % i == 0:
-        sum1 += i
+#program to read an expression and evaluate it
 
-for j in range(1, y):
-    if y % j == 0:
-        sum2 += j
+expression = input("Enter an expression: ")
 
-if (sum1 == y and sum2 == x):
-    print('Amicable!')
-else:
-    print('Not Amicable!')
+result = eval(expression)
 
+print("Result:", result)
 
-print('------------------------- Factorial Number --------------------------')
-
-def find_factors(n):
-    factors = []
-    for i in range(1, n + 1):
-        if n % i == 0:
-            factors.append(i)
-
-
-print('------------------------Arm Strong Number ---------------------------')            
-n = int(input("Enter a number: "))
-
-temp = n
-sum = 0
-digits = len(str(n))
-
-while temp > 0:
-    digit = temp % 10
-    sum = sum + digit ** digits
-    temp = temp // 10
-
-if sum == n:
-    print("Armstrong Number")
-else:
-    print("Not an Armstrong Number")
-
-print('----------------------- prime or co-prime---------------------------')
-n = int(input("Enter a number: "))
-
-if n <= 1:
-    print("Not a Prime Number")
-else:
-    prime = True
-
-    for i in range(2, n):
-        if n % i == 0:
-            prime = False
-            break
-
-    if prime:
-        print("Prime Number")
-    else:
-        print("Not a Prime Number")
