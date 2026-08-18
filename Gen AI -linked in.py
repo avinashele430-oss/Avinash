@@ -53,3 +53,28 @@ for ch in s:
         result += ch
 
 print("Result:", result)
+
+# split a string with multiple delimiters.
+print(' split a string with multiple delimiters')
+import re
+
+s = input("Enter a string: ")
+
+result = re.split(r'[,;: ]+', s)
+
+print("Split string:", result)
+
+#find all adverbs and their positions in a given sentence.
+print(' find all adverbs and their positions in a given sentence')
+
+import re
+
+s = input("Enter a sentence: ")
+
+words = s.split()
+
+for i, word in enumerate(words):
+    clean_word = re.sub(r'[^\w]', '', word)
+
+    if clean_word.lower().endswith("ly"):
+        print("Adverb:", clean_word, "Position:", i + 1)
